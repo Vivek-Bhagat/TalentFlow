@@ -1265,7 +1265,7 @@ SOFTWARE.
 
 #### Repository Links
 
-- **GitHub**: [https://github.com/Vivek-Bhagat/ENTNT-assignment](https://github.com/Vivek-Bhagat/ENTNT-assignment)
+- **GitHub**: [https://github.com/Vivek-Bhagat/TalentFlow](https://github.com/Vivek-Bhagat/TalentFlow)
 - **Live Demo**: [(https://talentflow-app.vercel.app/)](https://talentflow-app.vercel.app/)
 - **Documentation**: [ README File](https://github.com/Vivek-Bhagat/TalentFlow/blob/main/README.md)
 
