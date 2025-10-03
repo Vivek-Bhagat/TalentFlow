@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import type {  ListJobRowProps } from "@/types";
+import type { ListJobRowProps } from "@/types";
 
 const ListJobRow = memo(function ListJobRow({
   job,
@@ -74,7 +74,8 @@ const ListJobRow = memo(function ListJobRow({
         isDragging &&
           "shadow-xl shadow-primary/20 scale-[1.01] z-50 ring-2 ring-primary/30",
         isReorderMode && "cursor-grab active:cursor-grabbing"
-      )}>
+      )}
+      {...(isReorderMode ? { ...attributes, ...listeners } : {})}>
       <div className="flex flex-col lg:flex-row gap-4 p-6 w-full">
         {/* Left Section */}
         <div className="flex flex-col gap-2 flex-1 min-w-0">
@@ -87,10 +88,7 @@ const ListJobRow = memo(function ListJobRow({
               </Badge>
 
               {isReorderMode && (
-                <div
-                  className="p-1 hover:bg-primary/10 rounded cursor-grab active:cursor-grabbing transition-colors"
-                  {...attributes}
-                  {...listeners}>
+                <div className="p-1 hover:bg-primary/10 rounded transition-colors">
                   <GripVertical className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
                 </div>
               )}
