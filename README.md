@@ -1,452 +1,122 @@
-# TalentFlow - A Mini Hiring Platform 🚀
+<!-- Short README: keep under ~120 lines. Extended docs live in docs/EXTENDED.md -->
 
-> **A comprehensive, full-stack recruitment management system built with React 19, TypeScript, and modern web technologies.**
+# TalentFlow 🚀
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19.1.1-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.13-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+Offline-capable, type-safe hiring workflow demo (Jobs → Candidates → Assessments → Scheduling → Analytics) built with: React 19, TypeScript, Vite, Tailwind, Radix UI, TanStack Query, Dexie (IndexedDB), MSW, @dnd-kit.
 
----
+## Quick Start
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Assignment Requirements Fulfillment](#-assignment-requirements-fulfillment)
-- [Demo & Screenshots](#-demo--screenshots)
-- [Features](#-features)
-- [Quick Start](#-quick-start)
-- [Architecture](#%EF%B8%8F-architecture)
-- [Tech Stack](#%EF%B8%8F-tech-stack)
-- [Project Structure](#-project-structure)
-- [Development Guide](#-development-guide)
-- [API Documentation](#-api-documentation)
-- [Technical Decisions](#-technical-decisions)
-- [Known Issues](#%EF%B8%8F-known-issues)
-- [Bonus Features](#-bonus-features)
-- [Future Enhancements](#-future-enhancements)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
-
----
-
-## 📝 Assignment Requirements Fulfillment
-
-This project was built as a **React Technical Assignment** for a Front-End Developer position. Below is a comprehensive mapping of how each requirement has been implemented.
-
----
-
-
-
-#### ✅ Seed Data 
-
-| Requirement           | Implemented                               | Status  |
-| --------------------- | ----------------------------------------- | ------- |
-| **25 jobs**           | 25 jobs with mixed active/archived status | ✅ Done |
-| **1,000 candidates**  | 100+ seeded (scalable to 1000+)           | ✅ Done |
-| **3+ assessments**    | 3 assessments with 10+ questions each     | ✅ Done |
-| **Random assignment** | Candidates assigned to random jobs/stages | ✅ Done |
-| **Realistic data**    | Generated with Faker.js                   | ✅ Done |
-
-**Implementation**: `src/lib/seed/seed-data.ts`
-
----
-
-
----
-
-### 🎁 Assignment Bonus Features Summary
-
-**Beyond Requirements**: 20 additional features implemented
-
-1. ✅ Dark mode with system detection
-2. ✅ Advanced analytics dashboard
-3. ✅ WCAG 2.1 AA accessibility
-4. ✅ Performance optimizations (< 200KB bundle)
-5. ✅ Deep linking with URL state
-6. ✅ Auto-save functionality
-7. ✅ Rich text notes with @mentions
-8. ✅ Interview scheduler
-9. ✅ Realistic demo data (Faker.js)
-10. ✅ Toast notifications (Sonner)
-11. ✅ Animated transitions (Framer Motion)
-12. ✅ Multiple view modes (Grid/List/Kanban)
-13. ✅ Advanced filtering system
-14. ✅ Real-time search with debouncing
-15. ✅ Optimistic UI updates
-16. ✅ Error boundaries
-17. ✅ Responsive design (mobile-first)
-18. ✅ Code splitting & lazy loading
-18. ✅ Create copy of Assessment 
-
-**Full details**: See [Bonus Features](#-bonus-features) section
-
----
-
-## 🌟 Overview
-
-**TalentFlow** is a modern, production-ready hiring platform that streamlines the entire recruitment lifecycle. Built with cutting-edge technologies and best practices, it offers a seamless experience for managing job postings, tracking candidates through hiring stages, conducting assessments, and scheduling interviews.
-
-### 🎯 Key Highlights
-
-- **� Modern UI/UX**: Beautiful, responsive design with dark/light mode support
-- **⚡ Lightning Fast**: Built with Vite for instant HMR and optimized production builds
-- **🔄 Drag-and-Drop**: Intuitive Kanban board for visual candidate pipeline management
-- **📝 Smart Assessments**: Customizable technical and cultural assessment builder
-- **📊 Real-time Analytics**: Comprehensive dashboards with hiring metrics and insights
-- **📅 Interview Management**: Flexible scheduling with multiple interview types
-- **💾 Offline-First**: Works without internet using IndexedDB for local storage
-- **♿ Accessible**: WCAG 2.1 AA compliant with keyboard navigation and screen reader support
-- **🔒 Type-Safe**: Full TypeScript coverage for robust, maintainable code
-- **🎭 Mock API**: MSW-powered realistic API simulation for development
-
----
-
-### Getting Started
-
-1. Click **"Start Free Trial"** or **"Try Demo Account"** on the landing page
-2. Explore pre-seeded demo data with sample jobs, candidates, and assessments
-3. No authentication required - dive straight into the features!
-
----
-
-## ✨ Features
-
-### 🏢 Job Management
-
-- **✅ Complete CRUD Operations**: Create, read, update, and archive job postings
-- **🎨 Multi-Step Job Creation**: Intuitive wizard-style form with validation
-- **🔄 Drag-and-Drop Reordering**: Organize jobs by priority with visual feedback
-- **🔍 Advanced Search & Filtering**: Real-time search with status filters
-- **📊 Job Analytics Dashboard**:
-  - Application count tracking
-  - Conversion rate metrics
-  - Average time-to-fill
-  - Department-wise breakdown
-- **🏷️ Dynamic Tagging**: Categorize jobs with custom tags
-- **💰 Salary Range Management**: Min/max salary with currency support
-- **📍 Location Tracking**: Remote, hybrid, or office-based positions
-
-### 👥 Candidate Management
-
-- **📋 Visual Kanban Board**: Drag-and-drop candidate pipeline management
-  - **Applied** → **Screening** → **Technical** → **Offer** → **Hired/Rejected**
-- **👤 Comprehensive Profiles**:
-  - Contact information and location
-  - Skills and experience
-  - Resume storage (simulated)
-  - Application timeline
-
-- **📝 Collaborative Notes**:
-  - Rich text note-taking
-  - @mentions for team collaboration
-  - Timestamped activity log
-- **🔍 Advanced Filtering**:
-  - Filter by stage, job,
-  - Search by name, email, skills
-  - Sort by date, rating, or name
-- **📱 Responsive Card/List Views**: Optimized for desktop and mobile
-- **🔔 Activity Timeline**: Complete history of all candidate interactions
-
-### 📝 Assessment System
-
-- **🏗️ Flexible Assessment Builder**:
-  - Multiple question types:
-    - ✅ Single/Multiple choice
-    - ✏️ Short/Long text responses
-    - 🔢 Numeric inputs
-    - 📎 File uploads
-  - Drag-and-drop question reordering
-  - Section-based organization
-  - Question weighting support
-- **⏱️ Time Management**:
-  - Configurable assessment duration
-  - Time limit enforcement
-  - Progress tracking
-- **📊 Automatic Scoring**:
-  - Real-time answer validation
-  - Weighted scoring algorithm
-  - Detailed result breakdown by section
-  - Performance percentile calculation
-- **📈 Result Analytics**:
-  - Individual question performance
-  - Section-wise analysis
-  - Comparison with other candidates
-  - Pass/fail determination
-
-### 📅 Interview Management
-
-- **🗓️ Flexible Scheduling**:
-  - Date and time picker with validation
-  - Duration selection (30min to 4hrs)
-  - Multiple interview types:
-    - 📞 Phone Screen
-    - 💻 Video Call
-    - 🏢 In-Person
-    - 🔧 Technical Round
-    - 🎯 Final Round
-- **👥 Multi-Interviewer Support**:
-  - Assign multiple interviewers
-  - Interviewer availability checking
-  - Automatic participant notifications
-- **🔗 Meeting Integration**:
-  - Auto-generated video conference URLs
-  - Location/address for in-person interviews
-  - Calendar invitation generation (simulated)
-- **📋 Interview History**:
-  - Complete interview timeline
-  - Notes and feedback collection
-  - Status tracking (Scheduled/Completed/Cancelled)
-
-### 📊 Analytics & Dashboard
-
-- **📈 Real-Time Metrics**:
-  - Total active jobs
-  - Total candidates in pipeline
-  - Interviews scheduled
-  - Recent hires
-- **📉 Visual Charts**:
-  - Hiring pipeline funnel chart
-  - Department-wise hiring trends
-  - Time-to-hire analytics
-  - Conversion rate tracking
-- **🎯 Performance Insights**:
-  - Top performing job postings
-  - Bottleneck identification
-  - Stage-wise drop-off rates
-  - Recruiter productivity metrics
-
-### 🎨 User Experience
-
-- **🌓 Dark/Light Mode**:
-  - Seamless theme switching
-  - System preference detection
-  - Persistent theme selection
-- **📱 Fully Responsive**:
-  - Mobile-first design approach
-  - Touch-optimized interactions
-  - Adaptive layouts for all screen sizes
-- **♿ Accessibility**:
-  - WCAG 2.1 AA compliant
-  - Keyboard navigation support
- 
-- **⚡ Performance Optimized**:
-  - Code splitting and lazy loading
-  - Optimistic UI updates
-  - Debounced search inputs
-  - Virtual scrolling for large lists
-  - Image lazy loading
-- **💾 Offline Support**:
-  - IndexedDB for local storage
-  - Works without internet connection
-  - Automatic data persistence
-
----
-
-## 🏗️ Architecture
-
-### High-Level System Architecture
-
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                      TalentFlow Application                       │
-└──────────────────────────────────────────────────────────────────┘
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        │                     │                     │
-        ▼                     ▼                     ▼
-┌──────────────┐      ┌──────────────┐     ┌──────────────┐
-│ Presentation │      │   Business   │     │     Data     │
-│    Layer     │◄────►│    Logic     │◄───►│    Layer     │
-└──────────────┘      └──────────────┘     └──────────────┘
-        │                     │                     │
-        │                     │                     │
-   ┌────┴────┐          ┌────┴────┐          ┌────┴────┐
-   │         │          │         │          │         │
-   ▼         ▼          ▼         ▼          ▼         ▼
-┌─────┐  ┌─────┐   ┌──────┐  ┌──────┐   ┌──────┐  ┌─────┐
-│React│  │Radix│   │Custom│  │React │   │Dexie │  │ MSW │
-│Router│ │ UI  │   │Hooks │  │Query │   │(IDB) │  │ API │
-└─────┘  └─────┘   └──────┘  └──────┘   └──────┘  └─────┘
+```bash
+git clone https://github.com/Vivek-Bhagat/ENTNT-assignment talentflow
+cd talentflow
+npm install
+npm run dev
 ```
 
-### Component Architecture
+Open http://localhost:5173 then click `**Start Free Trial**` (seeds data locally).
 
-TalentFlow follows a **layered component architecture** with clear separation of concerns:
+## Deployed server Link
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         Pages Layer                          │
-│  (Route-level components with data fetching)                │
-│  Dashboard, Jobs, Candidates, Assessments, Kanban           │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-┌────────────────────────┴────────────────────────────────────┐
-│                    Feature Components                        │
-│  (Domain-specific business logic)                           │
-│  JobCreateForm, CandidateProfile, AssessmentBuilder         │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-┌────────────────────────┴────────────────────────────────────┐
-│                   Shared Components                          │
-│  (Reusable UI components)                                   │
-│  Card, Button, Dialog, Table, Charts                        │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-┌────────────────────────┴────────────────────────────────────┐
-│                    Primitive Layer                           │
-│  (Base UI primitives from Radix UI)                         │
-│  Dialog, Popover, Select, Switch, Tabs                      │
-└─────────────────────────────────────────────────────────────┘
-```
+- URL : https://talentflow-app.vercel.app/
+- **Demo Access**: Click **"Start Free Trial"** on the landing page to access the app with pre-seeded data. No authentication required!
 
-### Project Structure
+# Architecture 🚀
+
+## Core Concepts
+
+- Layered client UI → hooks/state → API wrapper → MSW → Dexie
+- Offline-first: all data persisted in IndexedDB
+- Optimistic mutations + query caching (TanStack Query)
+- Accessible primitives via Radix + utility styling via Tailwind
+- Modular domain types in `src/types`
+
+## Minimal Structure
 
 ```
-TalentFlow/
-├── 📁 src/
-│   ├── 📁 pages/                   # Route-level pages
-│   │   ├── 📁 dashboard/           # Analytics & overview
-│   │   ├── 📁 job/                 # Job management pages
-│   │   ├── 📁 candidate/           # Candidate pages
-│   │   ├── 📁 assessment/          # Assessment pages
-│   │   ├── 📁 kanban/              # Kanban board views
-│   │   ├── 📁 landing/             # Marketing/landing page
-│   │   └── 📁 signup/              # Auth pages (placeholder)
-│   │
-│   ├── 📁 components/              # Reusable components
-│   │   ├── 📁 ui/                  # Base UI components
-│   │   │   ├── button.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── dialog.tsx
-│   │   │   ├── table.tsx
-│   │   │   └── ... (30+ components)
-│   │   │
-│   │   ├── 📁 layout/              # Layout components
-│   │   │   ├── AppLayout.tsx       # Main app shell
-│   │   │   └── Notification.tsx    # Toast notifications
-│   │   │
-│   │   ├── 📁 Jobs/                # Job-specific components
-│   │   │   ├── JobCreateForm.tsx
-│   │   │   ├── JobDetailModal.tsx
-│   │   │   ├── JobAnalytics.tsx
-│   │   │   ├── GridJobCard.tsx
-│   │   │   └── ListJobRow.tsx
-│   │   │
-│   │   ├── 📁 Candidates/          # Candidate components
-│   │   │   ├── InterviewScheduler.tsx
-│   │   │   ├── NotesManager.tsx
-│   │   │   ├── AssessmentResults.tsx
-│   │   │   └── VirtualizeCandidateList.tsx
-│   │   │
-│   │   ├── 📁 Assessment/          # Assessment components
-│   │   │   └── AssessmentBuilder.tsx
-│   │   │
-│   │   ├── 📁 Dashboard/           # Dashboard components
-│   │   │   ├── HiringChart.tsx
-│   │   │   └── PipelineChart.tsx
-│   │   │
-│   │   └── 📁 Kanban/              # Kanban board
-│   │       └── Kanban.tsx
-│   │
-│   ├── 📁 api/                     # API layer
-│   │   ├── index.ts                # API client exports
-│   │   ├── base.ts                 # Base API client class
-│   │   ├── jobs.ts                 # Job endpoints
-│   │   ├── candidates.ts           # Candidate endpoints
-│   │   └── assessments.ts          # Assessment endpoints
-│   │
-│   ├── 📁 lib/                     # Utilities & configs
-│   │   ├── utils.ts                # Common utilities
-│   │   ├── init-app.ts             # App initialization
-│   │   ├── 📁 msw/                 # Mock Service Worker
-│   │   │   └── handler.ts          # API mock handlers
-│   │   └── 📁 seed/                # Database seeding
-│   │       └── seed-data.ts        # Demo data generation
-│   │
-│   ├── 📁 config/                  # Configuration
-│   │   └── database.ts             # Dexie schema & types
-│   │
-│   ├── 📁 hooks/                   # Custom React hooks
-│   │   ├── use-toast.ts            # Toast notifications
-│   │   ├── use-debounce.ts         # Input debouncing
-│   │   └── use-mobile.ts           # Mobile detection
-│   │
-│   ├── 📁 router/                  # Routing configuration
-│   │   ├── index.ts                # Router exports
-│   │   ├── appRoutes.tsx           # Protected routes
-│   │   ├── publicRoutes.tsx        # Public routes
-│   │   └── redirectRoutes.tsx      # Redirects
-│   │
-│   ├── 📁 types/                   # TypeScript types
-│   ├── 📁 utils/                   # Additional utilities
-│   ├── 📁 assets/                  # Static assets
-│   ├── App.tsx                     # Root component
-│   ├── main.tsx                    # Entry point
-│   └── index.css                   # Global styles
-│
-├── 📁 public/                      # Static files
-│   ├── mockServiceWorker.js        # MSW worker script
-│   └── vite.svg                    # Favicon
-│
-├── 📄 package.json                 # Dependencies
-├── 📄 vite.config.ts               # Vite configuration
-├── 📄 tailwind.config.ts           # Tailwind config
-├── 📄 tsconfig.json                # TypeScript config
-├── 📄 components.json              # Shadcn config
-├── 📄 vercel.json                  # Vercel deployment
-└── 📄 README.md                    # Documentation
+src/
+  pages/        # Route containers
+  components/   # UI + feature modules
+  api/          # API abstraction (mocked)
+  config/       # Dexie schema
+  lib/          # init, msw, seed
+  hooks/        # custom hooks
+  router/       # route defs
+  types/        # domain types
+```
+
+## Data Schema (Dexie)
+
+```
+jobs (++id, title, department, status, order, createdAt)
+candidates (++id, name, email, jobId, stage, appliedAt)
+notes (++id, candidateId, createdAt)
+assessments (++id, jobId, createdAt)
+assessmentResponses (++id, assessmentId, candidateId, submittedAt)
+timelineEvents (++id, candidateId, type, timestamp)
+```
+
+## Technical Stack Choices
+
+| Area        | Choice           | Why                   |
+| ----------- | ---------------- | --------------------- |
+| Build       | Vite             | Fast dev / lean prod  |
+| Data Cache  | TanStack Query   | Caching + mutations   |
+| Persistence | Dexie            | Offline & typed       |
+| Forms       | React Hook Form  | Perf + size           |
+| Drag/Drop   | @dnd-kit         | Flexible + a11y       |
+| Styling     | Tailwind + Radix | Speed + accessibility |
+| Mocking     | MSW              | Network fidelity      |
+
+## Performance Techniques
+
+Code-splitting, virtualized lists, debounced search, optimistic updates, minimal re-renders, IndexedDB persistence.
+
 ```
 
 ### Data Flow Architecture
 
 ```
-┌──────────────┐
-│  User Event  │
-│  (Click/Input)
-└──────┬───────┘
-       │
-       ▼
-┌──────────────────┐
-│ React Component  │
-│  State Update    │
-└──────┬───────────┘
-       │
-       ▼
-┌──────────────────┐
-│  API Client Call │
-│  (TanStack Query)│
-└──────┬───────────┘
-       │
-       ▼
-┌──────────────────┐
-│  MSW Interceptor │
-│  (Mock Handler)  │
-└──────┬───────────┘
-       │
-       ▼
-┌──────────────────┐
-│  Dexie/IndexedDB │
-│  Data Operation  │
-└──────┬───────────┘
-       │
-       ▼
-┌──────────────────┐
-│  Query Cache     │
-│  Invalidation    │
-└──────┬───────────┘
-       │
-       ▼
-┌──────────────────┐
-│  Component       │
-│  Re-render       │
-└──────────────────┘
+
+User Event
+(Click/Input)
+
+│
+▼
+
+React Component
+State Update
+
+│
+▼
+
+API Client Call
+(TanStack Query)
+
+│
+▼
+
+MSW Interceptor
+(Mock Handler)
+
+│
+▼
+
+Dexie/IndexedDB
+Data Operation
+
+│
+▼
+
+Query Cache
+Invalidation
+
+│
+▼
+
+Component
+Re-render
+
 ```
-
-
-
 
 ### First-Time Setup
 
@@ -458,7 +128,6 @@ On the first launch, TalentFlow will automatically:
 4. ✅ Configure initial application state
 
 **Demo Access**: Click **"Start Free Trial"** on the landing page to access the app with pre-seeded data. No authentication required!
-
 
 #### React 19
 
@@ -473,8 +142,6 @@ On the first launch, TalentFlow will automatically:
 - **IntelliSense**: Better IDE autocomplete and documentation
 - **Refactoring**: Safe large-scale code changes
 - **API Contracts**: Clear interface definitions
-
-
 
 #### Tailwind CSS
 
@@ -497,12 +164,7 @@ On the first launch, TalentFlow will automatically:
 - **Optimistic Updates**: Better perceived performance
 - **DevTools**: Excellent debugging capabilities
 
----
-
-
-
-
-
+```
 
 ## 📚 API Documentation
 
@@ -525,9 +187,11 @@ The application uses **Mock Service Worker (MSW)** to simulate a REST API during
 ### Base URL Structure
 
 ```
-/api/jobs          # Job management endpoints
-/api/candidates    # Candidate management endpoints
-/api/assessments   # Assessment system endpoints
+
+/api/jobs # Job management endpoints
+/api/candidates # Candidate management endpoints
+/api/assessments # Assessment system endpoints
+
 ```
 
 ---
@@ -560,40 +224,15 @@ if (shouldWriteFail()) {
 
 **400 Bad Request** - Validation errors
 
-```typescript
-{
-  error: "Validation failed",
-  details: {
-    field: "Error message"
-  }
-}
-```
-
 **404 Not Found** - Resource doesn't exist
 
-```typescript
-{
-  error: "Not found",
-  message: "Job with id 'xyz' not found"
-}
-```
-
 **500 Internal Server Error** - Simulated server errors
-
-```typescript
-{
-  error: "Internal server error",
-  message: "Failed to process request"
-}
-```
 
 ---
 
 ### MSW Handler Implementation
 
 The complete MSW handlers are in `src/lib/msw/handler.ts`:
-
-
 
 ## 🎯 Technical Decisions
 
@@ -613,8 +252,6 @@ This section documents key architectural and technology choices made during Tale
 - ✅ **Ecosystem**: Largest component library ecosystem and community support
 - ✅ **Performance**: Better hydration and rendering optimizations
 - ✅ **Developer Experience**: Excellent debugging tools and documentation
-
-
 
 ---
 
@@ -660,11 +297,11 @@ This section documents key architectural and technology choices made during Tale
 - ✅ **Build Performance**: Faster CI/CD pipelines
 
 **Performance Comparison**:
-| Metric           | Vite | Webpack (CRA) |
+| Metric | Vite | Webpack (CRA) |
 | --------------- | ----- | ------------- |
-| Cold Start      | ~200ms| ~5000ms       |
-| HMR Update      | <50ms | ~500ms        |
-| Production Build| ~12s  | ~45s           |
+| Cold Start | ~200ms| ~5000ms |
+| HMR Update | <50ms | ~500ms |
+| Production Build| ~12s | ~45s |
 
 ---
 
@@ -776,8 +413,6 @@ class TalentFlowDB extends Dexie {
 - ✅ **Dark Mode**: Native dark mode support with `dark:` prefix
 - ✅ **No Context Switching**: Style in JSX, no separate CSS files
 
-
-
 #### 7.2 Radix UI
 
 **Reasoning**:
@@ -788,8 +423,6 @@ class TalentFlowDB extends Dexie {
 - ✅ **Keyboard Navigation**: Full keyboard support
 - ✅ **Browser Support**: Consistent behavior across browsers
 - ✅ **Focus Management**: Proper focus trapping and restoration
-
-
 
 ### 8. Drag & Drop: @dnd-kit
 
@@ -803,8 +436,6 @@ class TalentFlowDB extends Dexie {
 - ✅ **Flexible**: Works for lists, grids, kanban boards
 - ✅ **Touch Support**: Mobile-friendly drag interactions
 - ✅ **TypeScript**: Full type safety
-
-
 
 ### 9. Forms: React Hook Form
 
@@ -877,11 +508,7 @@ class TalentFlowDB extends Dexie {
 - ✅ **Spring Physics**: Natural-feeling animations
 - ✅ **TypeScript**: Full type safety
 
-
-
 ---
-
-
 
 ### 14. Code Quality: ESLint + TypeScript
 
@@ -916,8 +543,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - ❌ No cloud backup or export functionality
 - ❌ Cannot access data from different devices
 
-
-
 ---
 
 ### 📝 Assessment System Limitations
@@ -933,7 +558,7 @@ This section documents current limitations, known bugs, and areas for improvemen
 - ❌ Video response questions
 - ❌ Interactive coding challenges
 
-**Status**: 🟡 Planned for v2.0
+
 
 ---
 
@@ -953,8 +578,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - Manually adjust scores based on human review
 - Use assessments as screening tool only
 
-
-
 ---
 
 #### 5. No Anti-Cheating Measures for quiz
@@ -970,8 +593,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - ❌ No time zone / IP tracking
 
 **Impact**: Assessments are honor-system based
-
-
 
 ---
 
@@ -994,8 +615,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - Manually add events to your calendar
 - Copy meeting details and create events manually
 
-
-
 ---
 
 #### 7. Time Zone Handling
@@ -1014,8 +633,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - Use UTC time for clarity
 - Confirm times via email/phone
 
-
-
 ---
 
 #### 8. No Email Notifications
@@ -1029,8 +646,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - ❌ New application alerts
 - ❌ Assessment completion notifications
 - ❌ Team collaboration notifications
-
-
 
 ---
 
@@ -1051,9 +666,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - Use desktop for drag-and-drop intensive tasks
 - Use long-press for drag initiation on mobile
 
-
-
-
 ### 🌐 Browser Compatibility
 
 #### 10. Safari Quirks
@@ -1073,8 +685,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - Increase Safari storage quota if prompted
 - Test thoroughly on Safari if that's your target
 
-
-
 ---
 
 #### 11. Firefox Drag Performance
@@ -1085,10 +695,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 
 - ⚠️ Kanban board feels slightly laggy
 - ⚠️ Visual feedback delay during drag
-
-
-
-
 
 ### ⚡ Performance Considerations
 
@@ -1108,11 +714,7 @@ This section documents current limitations, known bugs, and areas for improvemen
 - Use pagination (not yet implemented)
 - Filter data to reduce visible items
 
-
-
 ---
-
-
 
 ### 🔒 Security & Privacy
 
@@ -1128,8 +730,6 @@ This section documents current limitations, known bugs, and areas for improvemen
 - ❌ Audit logs
 - ❌ Session management
 
-
-
 ---
 
 #### 14. No Data Validation on Client
@@ -1141,12 +741,9 @@ This section documents current limitations, known bugs, and areas for improvemen
 - ⚠️ Possible data corruption with manual IndexedDB edits
 - ⚠️ No protection against malicious data entry
 
-
-
 ---
 
 #
-
 
 ## 🎁 Bonus Features
 
@@ -1164,7 +761,6 @@ TalentFlow includes several advanced features that go beyond basic requirements,
 - All components fully styled for both themes
 
 **Technical Details**:
-
 
 **Benefits**:
 
@@ -1184,13 +780,12 @@ TalentFlow includes several advanced features that go beyond basic requirements,
 - Multi-column layout (Applied → Screening → Technical → Offer → Hired/Rejected)
 - Real-time stage updates
 - Optimistic UI updates
-- Touch-friendly mobile support
+
 
 **Technical Implementation**:
 
 **Advanced Capabilities**:
 
-- ✅ Keyboard navigation (Tab, Space, Arrow keys)
 - ✅ Screen reader announcements
 - ✅ Drag constraints and restrictions
 - ✅ Visual drag indicators
@@ -1233,7 +828,6 @@ TalentFlow includes several advanced features that go beyond basic requirements,
 **Implementation**:
 All data mutations use optimistic updates for instant feedback:
 
-
 **User Benefits**:
 
 - ✅ Instant visual feedback
@@ -1254,9 +848,6 @@ All data mutations use optimistic updates for instant feedback:
   - Tags and descriptions
 - No submit button needed
 - Clear button for quick reset
-
-
-
 
 **Performance Benefits**:
 
@@ -1279,7 +870,6 @@ All data mutations use optimistic updates for instant feedback:
 **UI/UX**:
 
 - Clean, comment-style interface
-- Automatic author attribution
 - Chronological timeline view
 - Color-coded mention highlights
 
@@ -1289,43 +879,18 @@ All data mutations use optimistic updates for instant feedback:
 
 **Filter Categories**:
 
-- **Jobs**: Status, department, location, tags
+- **Jobs**: Status, department, location, tags , title
 - **Candidates**: Stage, rating, skills, date range
-- **Multi-Select**: Combine multiple filter criteria
-- **Smart Filters**: "High-rated", "Recent", "Interview Today"
 
 **Technical Features**:
 
-- Client-side filtering for instant results
-- URL parameter persistence (shareable links)
-- Filter count badges
-- Clear all filters button
+- Client-side filtering in candidates page for instant results
+- Filter count badges on kanban page
+- Clear all filters button on candidates kanban page
 
 ---
 
-
-
-### 8. ♿ WCAG 2.1 AA Accessibility
-
-**Compliance Features**:
-
-- **Keyboard Navigation**: Full keyboard support for all interactions
-- **Screen Readers**: ARIA labels and semantic HTML
-- **Focus Management**: Visible focus indicators and logical tab order
-- **Color Contrast**: Minimum 4.5:1 contrast ratio
-- **Alt Text**: All images have descriptive alt text
-- **Form Labels**: Explicit label associations
-
-**Testing**:
-
-- Tested with NVDA and VoiceOver
-- Keyboard-only navigation verified
-- Color contrast checked with tools
-
-
----
-
-### 9. 🚀 Performance Optimizations
+### 8. 🚀 Performance Optimizations
 
 #### Code Splitting
 
@@ -1339,18 +904,15 @@ All data mutations use optimistic updates for instant feedback:
 
 - Lazy loading images
 - Responsive images with srcset
-- Modern format support (WebP)
 
 #### Rendering Optimization
 
 - React.memo for expensive components
 - useMemo for computed values
 - useCallback for event handlers
-- Virtual scrolling for long lists
+- Virtual scrolling in candidates List page
 
-
-
-### 10. 🎭 Realistic Demo Data
+### 9. 🎭 Realistic Demo Data
 
 **Generated with Faker.js**:
 
@@ -1364,11 +926,10 @@ All data mutations use optimistic updates for instant feedback:
 **Data Quality**:
 
 - ✅ Proper name formatting
-- ✅ Valid email addresses
+- ✅ email addresses
 - ✅ Realistic phone numbers
 - ✅ Geographic locations
 - ✅ Skill diversity
-- ✅ Rating distribution
 
 ---
 
@@ -1382,7 +943,6 @@ All data mutations use optimistic updates for instant feedback:
 - Action buttons (Undo, Retry)
 - Stacking management
 - Promise-based toasts for async operations
-
 
 ---
 
@@ -1405,12 +965,7 @@ All data mutations use optimistic updates for instant feedback:
 - Notes and agenda
 - Status tracking (Scheduled/Completed/Cancelled)
 
-**Calendar View**:
 
-- Daily/weekly/monthly views
-- Color-coded by interview type
-- Drag-to-reschedule (planned)
-- iCal export (planned)
 
 ---
 
@@ -1434,9 +989,6 @@ All data mutations use optimistic updates for instant feedback:
 - Auto-save drafts
 - Preview mode
 
-
-
-
 ### 14. 🎨 Animated Page Transitions
 
 **Framer Motion Animations**:
@@ -1447,11 +999,7 @@ All data mutations use optimistic updates for instant feedback:
 - Loading skeleton screens
 - Micro-interactions on buttons
 
-
-
 ---
-
-
 
 ### 15. 📐 Responsive Grid/List View Toggle
 
@@ -1470,7 +1018,7 @@ All data mutations use optimistic updates for instant feedback:
 
 ---
 
-### 16. 🔄 Auto-Save Functionality
+### 16. 🔄 Auto-Save Functionality for Assessment
 
 **Features**:
 
@@ -1480,23 +1028,16 @@ All data mutations use optimistic updates for instant feedback:
 - Save indicators
 - Conflict detection
 
-
 ---
 
-### 17. 🎭 Loading States & Skeletons
+### 17. 🎭 Loading States
 
 **Better UX with Loading Indicators**:
 
-- Skeleton screens for content loading
+- Loading Spinners for content loading
 - Spinner for actions
 - Progress bars for multi-step processes
 - Optimistic updates reduce perceived loading
-
-
-
-
-
-
 
 ## 🚧 Future Enhancements
 
@@ -1544,8 +1085,6 @@ All data mutations use optimistic updates for instant feedback:
 - 📊 Custom dashboard builder
 - 📈 Advanced metrics and KPIs
 - 📄 PDF/Excel report export
-- 🤖 Predictive analytics with ML
-- 📉 Diversity and inclusion metrics
 
 #### Workflow Automation (v2.0)
 
@@ -1708,10 +1247,6 @@ SOFTWARE.
 
 ---
 
-
-
-
-
 #### Technical Stack Highlights
 
 **Frontend**:
@@ -1728,16 +1263,13 @@ SOFTWARE.
 - React Hook Form 7.63.0 (forms)
 - MSW (API mocking)
 
-
 #### Repository Links
 
 - **GitHub**: [https://github.com/Vivek-Bhagat/ENTNT-assignment](https://github.com/Vivek-Bhagat/ENTNT-assignment)
-- **Live Demo**: [\[Deploy URL here\]](https://talentflow-app.vercel.app/)
-- **Documentation**: This README
+- **Live Demo**: [(https://talentflow-app.vercel.app/)](https://talentflow-app.vercel.app/)
+- **Documentation**: [ README File](https://github.com/Vivek-Bhagat/TalentFlow/blob/main/README.md)
 
 ---
-
-
 
 ---
 
@@ -1747,7 +1279,7 @@ SOFTWARE.
 
 - GitHub: [@Vivek-Bhagat](https://github.com/Vivek-Bhagat)
 - LinkedIn: [Connect with me](https://www.linkedin.com/in/vivek-bhagat)
-- Email: vivekbhagat@example.com
+- Email: vivekbhagat@gmail.com
 
 ---
 
@@ -1760,7 +1292,6 @@ SOFTWARE.
 - **Tailwind Labs** for Tailwind CSS
 - **Faker.js** team for realistic demo data
 - **MSW** team for API mocking solution
-
 
 ---
 
