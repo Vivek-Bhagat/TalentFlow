@@ -1732,7 +1732,7 @@ SOFTWARE.
 #### Repository Links
 
 - **GitHub**: [https://github.com/Vivek-Bhagat/ENTNT-assignment](https://github.com/Vivek-Bhagat/ENTNT-assignment)
-- **Live Demo**: [Deploy URL here]
+- **Live Demo**: [\[Deploy URL here\]](https://talentflow-app.vercel.app/)
 - **Documentation**: This README
 
 ---
